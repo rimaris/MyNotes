@@ -39,7 +39,11 @@ extension NotesListViewController {
 
 //MARK: - UITableViewDelegate
 extension NotesListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            repository.delete(note: notes[indexPath.row])
+        }
+    }
 }
 
 //MARK: - UITableViewDataSource

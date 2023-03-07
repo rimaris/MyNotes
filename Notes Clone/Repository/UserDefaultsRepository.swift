@@ -34,6 +34,7 @@ class UserDefaultsRepository: Repository {
             return
         }
         notes.remove(at: foundIndex)
+        saveNotes(notes: notes)
     }
     
     func update(note: Note) {
