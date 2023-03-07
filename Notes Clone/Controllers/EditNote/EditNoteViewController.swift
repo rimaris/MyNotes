@@ -8,6 +8,7 @@
 import UIKit
 
 class EditNoteViewController: UIViewController{
+    var note: Note?
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var titleTextField: UITextField!
@@ -15,6 +16,19 @@ class EditNoteViewController: UIViewController{
         super.viewDidLoad()
         initToolbar()
         setupKeyboardNotificationListeners()
+        
+        updateTitleTextField(title: note?.title)
+        updateTextView(text: note?.body)
+    }
+    
+    private func updateTitleTextField(title: String?) {
+        guard let title = title else { return }
+        titleTextField.text = title
+    }
+    
+    private func updateTextView(text: String?) {
+        guard let text = text else { return }
+        textView.text = text
     }
 }
 

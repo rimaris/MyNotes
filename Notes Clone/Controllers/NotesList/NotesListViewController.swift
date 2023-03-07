@@ -53,3 +53,17 @@ extension NotesListViewController: UITableViewDataSource {
         return cell
     }
 }
+
+//MARK: - Navigation
+extension NotesListViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case Constants.editNoteSegueId:
+            let sender = sender as? NoteCellView
+            let destination = segue.destination as? EditNoteViewController
+            destination?.note = sender?.note
+        default:
+            return
+        }
+    }
+}

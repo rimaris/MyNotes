@@ -10,5 +10,6 @@ import Foundation
 enum Constants {
     static let notesCellIdentifier = "NotesCell"
     static let createNewNoteSegueId = "createNewNote"
+    static let editNoteSegueId = "editNote"
     
 }

@@ -58,6 +58,7 @@
                                             <outlet property="TitleLabel" destination="Rnf-Rx-hWy" id="LLb-FY-vYC"/>
                                             <outlet property="previewLabel" destination="HwP-8K-bXQ" id="LwG-gR-O0M"/>
                                             <outlet property="titleLabel" destination="Rnf-Rx-hWy" id="fah-GV-34J"/>
+                                            <segue destination="spN-mt-UNZ" kind="show" identifier="editNote" id="qj7-3a-pRS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -192,6 +193,9 @@
             <point key="canvasLocation" x="2116.7938931297708" y="-66.197183098591552"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="qj7-3a-pRS"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemYellowColor"/>
     <resources>
         <systemColor name="labelColor">
