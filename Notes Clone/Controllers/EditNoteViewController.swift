@@ -44,9 +44,8 @@ class EditNoteViewController: UIViewController {
         guard let note = note else {
             return
         }
-        if note.body != "" && note.title != "" {
-            repository?.update(note: note)
-        }
+        note.updateDate = Date()
+        repository?.update(note: note)
     }
 }
 

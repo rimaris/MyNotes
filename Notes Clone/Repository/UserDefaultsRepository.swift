@@ -11,10 +11,8 @@ struct EncodedNotes: Codable {
     var notes: [Note]
 }
 
-
 class UserDefaultsRepository: Repository {
     weak var delegate: RepositoryDelegate?
-    
     private let userDefaults = UserDefaults.standard
     func getNotes() -> [Note] {
         guard let data = userDefaults.object(forKey: Constants.notesUserDefaultsKey) as? Data else { return [] }
@@ -58,7 +56,6 @@ class UserDefaultsRepository: Repository {
         userDefaults.set(true, forKey: Constants.notFirstRunUserDefaultsKey)
     }
     
-    
     private func findNoteIndex(notes: [Note], note: Note) -> Int? {
         for (i, existingNote) in notes.enumerated() {
             if existingNote.id == note.id {
@@ -81,5 +78,4 @@ class UserDefaultsRepository: Repository {
         }
         delegate?.repositoryDidUpdateNotes()
     }
-    
 }

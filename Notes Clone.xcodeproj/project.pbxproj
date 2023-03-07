@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F9A1D1029B7BEEE00971C06 /* screenshot1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6F9A1D0F29B7BEEE00971C06 /* screenshot1.jpeg */; };
+		6F9A1D1229B7BEF700971C06 /* screenshot2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6F9A1D1129B7BEF700971C06 /* screenshot2.jpeg */; };
 		6FBFB99C29B51F3C00774604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBFB99B29B51F3C00774604 /* AppDelegate.swift */; };
 		6FBFB99E29B51F3C00774604 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBFB99D29B51F3C00774604 /* SceneDelegate.swift */; };
 		6FBFB9A029B51F3C00774604 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBFB99F29B51F3C00774604 /* NotesListViewController.swift */; };
@@ -22,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F9A1D0D29B7BDE500971C06 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6F9A1D0F29B7BEEE00971C06 /* screenshot1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = screenshot1.jpeg; sourceTree = "<group>"; };
+		6F9A1D1129B7BEF700971C06 /* screenshot2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = screenshot2.jpeg; sourceTree = "<group>"; };
 		6FBFB99829B51F3C00774604 /* Notes Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Notes Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FBFB99B29B51F3C00774604 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FBFB99D29B51F3C00774604 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,9 +54,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F9A1D0E29B7BE1100971C06 /* screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A1D0F29B7BEEE00971C06 /* screenshot1.jpeg */,
+				6F9A1D1129B7BEF700971C06 /* screenshot2.jpeg */,
+			);
+			path = screenshots;
+			sourceTree = "<group>";
+		};
 		6FBFB98F29B51F3B00774604 = {
 			isa = PBXGroup;
 			children = (
+				6F9A1D0E29B7BE1100971C06 /* screenshots */,
+				6F9A1D0D29B7BDE500971C06 /* README.md */,
 				6FBFB99A29B51F3C00774604 /* Notes Clone */,
 				6FBFB99929B51F3C00774604 /* Products */,
 			);
@@ -86,18 +102,10 @@
 		6FBFB9B029B51F8000774604 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6FBFB9BB29B6321200774604 /* EditNote */,
-				6FBFB9B129B51F8D00774604 /* NotesList */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		6FBFB9B129B51F8D00774604 /* NotesList */ = {
-			isa = PBXGroup;
-			children = (
+				6FBFB9BC29B6323100774604 /* EditNoteViewController.swift */,
 				6FBFB99F29B51F3C00774604 /* NotesListViewController.swift */,
 			);
-			path = NotesList;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		6FBFB9B229B52A6C00774604 /* Views */ = {
@@ -122,14 +130,6 @@
 				6FBFB9B929B6273000774604 /* Constants.swift */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		6FBFB9BB29B6321200774604 /* EditNote */ = {
-			isa = PBXGroup;
-			children = (
-				6FBFB9BC29B6323100774604 /* EditNoteViewController.swift */,
-			);
-			path = EditNote;
 			sourceTree = "<group>";
 		};
 		6FC68A8429B7330800A0574F /* Repository */ = {
@@ -201,7 +201,9 @@
 			files = (
 				6FBFB9A829B51F3D00774604 /* LaunchScreen.storyboard in Resources */,
 				6FBFB9A529B51F3D00774604 /* Assets.xcassets in Resources */,
+				6F9A1D1229B7BEF700971C06 /* screenshot2.jpeg in Resources */,
 				6FBFB9A329B51F3C00774604 /* Main.storyboard in Resources */,
+				6F9A1D1029B7BEEE00971C06 /* screenshot1.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

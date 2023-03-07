@@ -10,7 +10,6 @@ import UIKit
 class NoteCellView: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var previewLabel: UILabel!
-    
     var note: Note? {
         didSet {
             updateTitleLabel(title: note?.title)
@@ -23,7 +22,11 @@ class NoteCellView: UITableViewCell {
 extension NoteCellView {
     private func updateTitleLabel(title: String?) {
         guard let title = title else { return }
-        titleLabel.text = title
+        if title.isEmpty {
+            titleLabel.text = "Без названия"
+        } else {
+            titleLabel.text = title
+        }
     }
     
     private func updatePreviewLabel(preview: String?, updateDate: Date?) {
