@@ -95,6 +95,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Заметки" id="9xO-Gt-yC3"/>
                     <connections>
+                        <outlet property="notesCountItem" destination="5qN-hZ-CN7" id="9jW-iE-IkC"/>
                         <outlet property="tableView" destination="ddC-Rp-fOs" id="jMP-JB-ZLI"/>
                     </connections>
                 </viewController>

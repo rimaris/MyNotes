@@ -10,7 +10,8 @@ import UIKit
 class NotesListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var repository: Repository = UserDefaultsRepository()
-    
+    @IBOutlet weak var notesCountItem: UIBarButtonItem!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         repository.delegate = self
@@ -19,6 +20,22 @@ class NotesListViewController: UIViewController {
         tableView.delegate =  self
         tableView.layer.cornerRadius = 10
         tableView.layer.masksToBounds = true
+        
+        updateNotesCount()
+    }
+    
+    func updateNotesCount() {
+        let notesCount = notes.count
+        let lastNumber = notesCount % 10
+        var countText: String
+        if lastNumber == 0 || 5 <= lastNumber && lastNumber <= 9 || (10 <= notesCount && notesCount <= 19) {
+            countText = "заметок"
+        } else if lastNumber == 1 {
+            countText = "заметка"
+        } else {
+            countText = "заметки"
+        }
+        notesCountItem.title = "\(notesCount) \(countText)"
     }
 }
 
@@ -79,5 +96,6 @@ extension NotesListViewController {
 extension NotesListViewController: RepositoryDelegate {
     func repositoryDidUpdateNotes() {
         tableView.reloadData()
+        updateNotesCount()
     }
 }
