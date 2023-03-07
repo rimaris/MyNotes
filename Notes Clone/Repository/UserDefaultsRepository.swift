@@ -49,6 +49,16 @@ class UserDefaultsRepository: Repository {
         saveNotes(notes: notes)
     }
     
+    func createFirstNoteIfFirstRun() {
+        let notFirstRun = userDefaults.bool(forKey: Constants.notFirstRunUserDefaultsKey)
+        if notFirstRun {
+            return
+        }
+        update(note: Note(title: "Пример заметки", body: "Это пример заметки, которую можно создать в данном приложении"))
+        userDefaults.set(true, forKey: Constants.notFirstRunUserDefaultsKey)
+    }
+    
+    
     private func findNoteIndex(notes: [Note], note: Note) -> Int? {
         for (i, existingNote) in notes.enumerated() {
             if existingNote.id == note.id {

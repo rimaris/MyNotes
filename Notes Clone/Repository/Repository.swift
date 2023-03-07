@@ -15,5 +15,6 @@ protocol Repository {
     func getNotes() -> [Note]
     func update(note: Note)
     func delete(note: Note)
+    func createFirstNoteIfFirstRun()
     var delegate: RepositoryDelegate? { get set }
 }
