@@ -22,6 +22,7 @@ class NotesListViewController: UIViewController {
         tableView.layer.masksToBounds = true
         
         updateNotesCount()
+        repository.createFirstNoteIfFirstRun()
     }
     
     func updateNotesCount() {
