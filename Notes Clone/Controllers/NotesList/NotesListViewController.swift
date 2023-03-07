@@ -25,6 +25,14 @@ class NotesListViewController: UIViewController {
         repository.createFirstNoteIfFirstRun()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
+            return
+        }
+        tableView.deselectRow(at: selectedIndexPath, animated: true)
+        
+    }
+    
     func updateNotesCount() {
         let notesCount = notes.count
         let lastNumber = notesCount % 10
