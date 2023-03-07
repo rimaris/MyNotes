@@ -10,7 +10,6 @@ import UIKit
 class NoteCellView: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var previewLabel: UILabel!
-    
     var note: Note? {
         didSet {
             updateTitleLabel(title: note?.title)
