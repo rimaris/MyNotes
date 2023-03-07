@@ -14,7 +14,7 @@ class NoteCellView: UITableViewCell {
     var note: Note? {
         didSet {
             updateTitleLabel(title: note?.title)
-            updatePreviewLabel(preview: note?.body)
+            updatePreviewLabel(preview: note?.body, updateDate: note?.updateDate)
         }
     }
 }
@@ -26,8 +26,17 @@ extension NoteCellView {
         titleLabel.text = title
     }
     
-    private func updatePreviewLabel(preview: String?) {
-        guard let preview = preview else { return }
-        previewLabel.text = preview
+    private func updatePreviewLabel(preview: String?, updateDate: Date?) {
+        guard let preview = preview, let updateDate = updateDate else { return }
+        let formatter = DateFormatter()
+        if updateDate.timeIntervalSinceNow < Constants.secondsInDay {
+            formatter.dateFormat = "HH:mm"
+        } else if updateDate.timeIntervalSinceNow < Constants.secondsInWeek {
+            formatter.dateFormat = "E"
+        } else {
+            formatter.dateFormat = "MMM d"
+        }
+        let previewDate = formatter.string(from: updateDate)
+        previewLabel.text = "\(previewDate) \(preview)"
     }
 }
