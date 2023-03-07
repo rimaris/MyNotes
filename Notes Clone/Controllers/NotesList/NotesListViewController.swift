@@ -8,11 +8,13 @@
 import UIKit
 
 class NotesListViewController: UIViewController {
-
     @IBOutlet weak var tableView: UITableView!
+    var repository: Repository = UserDefaultsRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        repository.delegate = self
+        
         tableView.dataSource = self
         tableView.delegate =  self
         tableView.layer.cornerRadius = 10
@@ -24,12 +26,8 @@ class NotesListViewController: UIViewController {
 extension NotesListViewController {
     var notes: [Note] {
         get {
-            return [
-                Note(title: "Список покупок", body: "1. Бананы"),
-                Note(title: "Задачи", body: "Учеба"),
-                Note(title: "work", body: "task 1"),
-                Note(title: "Cooking", body: "pancakes")
-            ]
+            return repository.getNotes()
+            
         }
     }
 }
@@ -62,8 +60,20 @@ extension NotesListViewController {
             let sender = sender as? NoteCellView
             let destination = segue.destination as? EditNoteViewController
             destination?.note = sender?.note
+            destination?.repository = repository
+        case Constants.createNewNoteSegueId:
+            let destination = segue.destination as? EditNoteViewController
+            destination?.repository = repository
+            destination?.createNewNote()
         default:
             return
         }
+    }
+}
+
+//MARK: - RepositoryDelegate
+extension NotesListViewController: RepositoryDelegate {
+    func repositoryDidUpdateNotes() {
+        tableView.reloadData()
     }
 }

@@ -132,7 +132,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iuv-sj-F6e">
-                                        <rect key="frame" x="0.0" y="0.0" width="370" height="73.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="370" height="1038.3333333333333"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ieh-tN-nIQ">
                                                 <rect key="frame" x="20" y="0.0" width="350" height="35.333333333333336"/>
@@ -143,8 +143,11 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2Je-ei-ATQ">
-                                                <rect key="frame" x="17" y="38.333333333333343" width="353" height="35.333333333333343"/>
+                                                <rect key="frame" x="17" y="38.333333333333371" width="353" height="1000.0000000000001"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1000" id="3OP-QL-byG"/>
+                                                </constraints>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

@@ -7,7 +7,8 @@
 
 import Foundation
 
-class Note {
+class Note: Codable, Identifiable {
+    var id = UUID()
     var title: String
     var body: String
     
