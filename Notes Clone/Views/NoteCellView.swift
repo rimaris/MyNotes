@@ -23,7 +23,11 @@ class NoteCellView: UITableViewCell {
 extension NoteCellView {
     private func updateTitleLabel(title: String?) {
         guard let title = title else { return }
-        titleLabel.text = title
+        if title.isEmpty {
+            titleLabel.text = "Без названия"
+        } else {
+            titleLabel.text = title
+        }
     }
     
     private func updatePreviewLabel(preview: String?, updateDate: Date?) {
