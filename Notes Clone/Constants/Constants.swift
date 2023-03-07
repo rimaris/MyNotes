@@ -11,5 +11,5 @@ enum Constants {
     static let notesCellIdentifier = "NotesCell"
     static let createNewNoteSegueId = "createNewNote"
     static let editNoteSegueId = "editNote"
-    
+    static let notesUserDefaultsKey = "MY_NOTES"
 }

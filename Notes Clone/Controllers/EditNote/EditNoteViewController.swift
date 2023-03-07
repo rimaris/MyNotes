@@ -7,18 +7,27 @@
 
 import UIKit
 
-class EditNoteViewController: UIViewController{
+class EditNoteViewController: UIViewController {
     var note: Note?
+    var repository: Repository?
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var titleTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        textView.delegate = self
+        titleTextField.delegate = self
+        
         initToolbar()
         setupKeyboardNotificationListeners()
         
         updateTitleTextField(title: note?.title)
         updateTextView(text: note?.body)
+    }
+    
+    func createNewNote() {
+        note = Note(title: "", body: "")
     }
     
     private func updateTitleTextField(title: String?) {
@@ -29,6 +38,15 @@ class EditNoteViewController: UIViewController{
     private func updateTextView(text: String?) {
         guard let text = text else { return }
         textView.text = text
+    }
+    
+    private func saveNoteIfNeeded() {
+        guard let note = note else {
+            return
+        }
+        if note.body != "" && note.title != "" {
+            repository?.update(note: note)
+        }
     }
 }
 
@@ -67,3 +85,18 @@ extension EditNoteViewController {
     }
 }
 
+//MARK: - UITextViewDelegate
+extension EditNoteViewController: UITextViewDelegate {
+    func textViewDidEndEditing(_ textView: UITextView) {
+        note?.body = textView.text
+        saveNoteIfNeeded()
+    }
+}
+
+//MARK: - UITextFieldDelegate
+extension EditNoteViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        note?.title = textField.text ?? ""
+        saveNoteIfNeeded()
+    }
+}

@@ -17,6 +17,8 @@
 		6FBFB9B729B61FAF00774604 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBFB9B629B61FAF00774604 /* Note.swift */; };
 		6FBFB9BA29B6273000774604 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBFB9B929B6273000774604 /* Constants.swift */; };
 		6FBFB9BD29B6323100774604 /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBFB9BC29B6323100774604 /* EditNoteViewController.swift */; };
+		6FC68A8629B7334A00A0574F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC68A8529B7334A00A0574F /* Repository.swift */; };
+		6FC68A8829B7340900A0574F /* UserDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC68A8729B7340900A0574F /* UserDefaultsRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		6FBFB9B629B61FAF00774604 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		6FBFB9B929B6273000774604 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6FBFB9BC29B6323100774604 /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
+		6FC68A8529B7334A00A0574F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		6FC68A8729B7340900A0574F /* UserDefaultsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 		6FBFB99A29B51F3C00774604 /* Notes Clone */ = {
 			isa = PBXGroup;
 			children = (
+				6FC68A8429B7330800A0574F /* Repository */,
 				6FBFB9B829B6272400774604 /* Constants */,
 				6FBFB9B529B61FA300774604 /* Models */,
 				6FBFB9B229B52A6C00774604 /* Views */,
@@ -125,6 +130,15 @@
 				6FBFB9BC29B6323100774604 /* EditNoteViewController.swift */,
 			);
 			path = EditNote;
+			sourceTree = "<group>";
+		};
+		6FC68A8429B7330800A0574F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				6FC68A8529B7334A00A0574F /* Repository.swift */,
+				6FC68A8729B7340900A0574F /* UserDefaultsRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +215,8 @@
 				6FBFB9B729B61FAF00774604 /* Note.swift in Sources */,
 				6FBFB9A029B51F3C00774604 /* NotesListViewController.swift in Sources */,
 				6FBFB99C29B51F3C00774604 /* AppDelegate.swift in Sources */,
+				6FC68A8829B7340900A0574F /* UserDefaultsRepository.swift in Sources */,
+				6FC68A8629B7334A00A0574F /* Repository.swift in Sources */,
 				6FBFB9BD29B6323100774604 /* EditNoteViewController.swift in Sources */,
 				6FBFB9B429B52A8F00774604 /* NoteCellView.swift in Sources */,
 				6FBFB99E29B51F3C00774604 /* SceneDelegate.swift in Sources */,
