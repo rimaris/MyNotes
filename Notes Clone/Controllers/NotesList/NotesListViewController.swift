@@ -9,6 +9,7 @@ import UIKit
 
 class NotesListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     var repository: Repository = UserDefaultsRepository()
     
     override func viewDidLoad() {
@@ -19,6 +20,10 @@ class NotesListViewController: UIViewController {
         tableView.delegate =  self
         tableView.layer.cornerRadius = 10
         tableView.layer.masksToBounds = true
+    }
+    
+    override func viewWillLayoutSubviews() {
+        tableViewHeight.constant = self.tableView.contentSize.height
     }
 }
 

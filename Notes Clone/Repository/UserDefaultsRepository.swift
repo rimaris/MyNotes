@@ -2,7 +2,7 @@
 //  UserDefaultsRepository.swift
 //  Notes Clone
 //
-//  Created by Мария Солодова on 07.03.2023.
+//  Created by Мария Васильева on 07.03.2023.
 //
 
 import Foundation
@@ -58,8 +58,9 @@ class UserDefaultsRepository: Repository {
     }
     
     private func saveNotes(notes: [Note]) {
+        let notesSorted = notes.sorted(by: {$1.updateDate < $0.updateDate})
         do {
-            let data = try JSONEncoder().encode(EncodedNotes(notes: notes))
+            let data = try JSONEncoder().encode(EncodedNotes(notes: notesSorted))
             userDefaults.set(data, forKey: Constants.notesUserDefaultsKey)
             
         } catch {

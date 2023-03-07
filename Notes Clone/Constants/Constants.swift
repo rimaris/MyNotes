@@ -12,4 +12,6 @@ enum Constants {
     static let createNewNoteSegueId = "createNewNote"
     static let editNoteSegueId = "editNote"
     static let notesUserDefaultsKey = "MY_NOTES"
+    static let secondsInDay = 86400.0
+    static let secondsInWeek = secondsInDay * 7
 }

@@ -9,6 +9,7 @@ import Foundation
 
 class Note: Codable, Identifiable {
     var id = UUID()
+    var updateDate = Date()
     var title: String
     var body: String
     
